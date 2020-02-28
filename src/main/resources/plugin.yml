@@ -1,0 +1,5 @@
+name: KGuildAlert
+version: 1.0
+main: me.kamlax.guildalert.Main
+commands:
+  goglos:
