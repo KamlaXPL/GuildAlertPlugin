@@ -33,9 +33,9 @@ class GuildAlertCommand : CommandExecutor {
                 timeMap[sender.uniqueId] = System.currentTimeMillis() + 30000L
                 val message = StringUtils.join(args, " ", 1, args.size)
                 when (args[0].toLowerCase()) {
-                    "chat" -> user.guild.onlineMembers.forEach { it.player.sendColoredMessage(message) }
-                    "title" -> user.guild.onlineMembers.forEach { it.player.sendTitle(message, "") }
-                    "subtitle" -> user.guild.onlineMembers.forEach { it.player.sendTitle("", message) }
+                    "chat" -> user.guild.onlineMembers.forEach { sender.sendColoredMessage(message) }
+                    "title" -> user.guild.onlineMembers.forEach { sender.sendTitle(message, "") }
+                    "subtitle" -> user.guild.onlineMembers.forEach { sender.sendTitle("", message) }
                     "actionbar" -> user.guild.onlineMembers.forEach { sender.sendActionBar(message) }
                 }
             } else sender.sendColoredMessage("&4Blad: &cTej komendy mozesz uzywac co 30 sekund!")
